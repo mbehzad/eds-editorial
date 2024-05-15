@@ -1,4 +1,4 @@
-import { html, render } from 'https://unpkg.com/lit-html@0.7.1/lit-html.js';
+import { render } from 'lit';
 
 /* const styleguideDummyData = {
   interface TemplateArgs {
@@ -14,8 +14,8 @@ const getTemplateName = () => {
   return templateName;
 };
 
-import(`./${getTemplateName()}.js`).then((module) => {
+import(`./components/${getTemplateName()}.ts`).then((module) => {
   const { template } = module;
-  const app = document.getElementById('app');
+  const app = document.getElementById('app')!;
   render(template(), app);
 });

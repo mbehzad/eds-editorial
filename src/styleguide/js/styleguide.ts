@@ -1,4 +1,4 @@
-import { html, render } from 'https://unpkg.com/lit-html@0.7.1/lit-html.js';
+import { html, render } from 'lit';
 import { previewTemplate } from './previewTemplate.js';
 import { navTemplate } from './nav.js';
 
@@ -15,9 +15,10 @@ const appTemplate = () => {
     ${previewTemplate('Features', 'preview.html?template=features')}
     ${previewTemplate('Posts', 'preview.html?template=posts')} ${previewTemplate('Form', 'preview.html?template=form')}
     ${previewTemplate('Table', 'preview.html?template=table')}
+    <!-- placeholder -->
   `;
 };
 
-const app = document.getElementById('app');
+const app = document.getElementById('app')!;
 
 render(appTemplate(), app);
