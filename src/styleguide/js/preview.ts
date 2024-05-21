@@ -14,7 +14,7 @@ const getTemplateName = () => {
   return templateName;
 };
 
-import(`./components/${getTemplateName()}.ts`).then((module) => {
+import(`../components/${getTemplateName()}.ts`).then((module) => {
   const { template } = module;
   const app = document.getElementById('app')!;
   render(template(), app);
