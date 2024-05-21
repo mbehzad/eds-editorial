@@ -14,8 +14,12 @@ const getTemplateName = () => {
   return templateName;
 };
 
-import(`../components/${getTemplateName()}.ts`).then((module) => {
+import(`../components/${getTemplateName()}.ts`).then(async (module) => {
   const { template } = module;
   const app = document.getElementById('app')!;
-  render(template(), app);
+  const html = await template();
+  render(html, app);
+  // initialize the main js but after the markup is rendered
+  const mainScript = '/dist/main/main.js';
+  await import(mainScript);
 });
