@@ -99,7 +99,7 @@ export class MainService {
 
   private addInnerContainer(main: HTMLElement) {
     const children = main.innerHTML;
-    main.innerHTML = `<div class="inner">${isSidekickLibraryActive() ? `` : `<header-component id="header"></header-component>`}${children}</div>`;
+    main.innerHTML = `<div class="inner">${isSidekickLibraryActive() || isInStyleguide() ? `` : `<header-component id="header"></header-component>`}${children}</div>`;
   }
 
   private loadLazy = async () => {
